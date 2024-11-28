@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-xl font-bold mb-4">Upload de Arquivo CSV</h1>
+<form action="/" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" class="block mb-4">
+  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Enviar</button>
+</form>
+
+{% if graph_html %}
+  <div class="mt-6">
+    <h2 class="text-lg font-semibold mb-4">Gráfico Gerado</h2>
+    <div>{{ graph_html | safe }}</div>
+  </div>
+{% endif %}
+{% endblock %}
