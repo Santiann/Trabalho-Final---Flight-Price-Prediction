@@ -9,8 +9,33 @@
 
 {% if graph_html %}
   <div class="mt-6">
-    <h2 class="text-lg font-semibold mb-4">Gráfico Gerado</h2>
-    <div>{{ graph_html | safe }}</div>
+    <h2 class="text-lg font-semibold mb-4">Gráficos Gerados</h2>
+    <div class="mb-6">
+      <h3 class="text-md font-medium mb-2">Preços por Companhia Aérea</h3>
+      <div>{{ graph_html.airline_price | safe }}</div>
+    </div>
+    <div class="mb-6">
+      <h3 class="text-md font-medium mb-2">Preços por Classe de Voo</h3>
+      <div>{{ graph_html.class_price | safe }}</div>
+    </div>
+    <div class="mb-6">
+      <h3 class="text-md font-medium mb-2">Média de Preços por Companhia Aérea</h3>
+      <div>{{ graph_html.mean_price | safe }}</div>
+    </div>
+    <div class="mb-6">
+      <h3 class="text-md font-medium mb-2">Preço Médio do Bilhete por Número de Paradas</h3>
+      <div>{{ graph_html.stops_price | safe }}</div>
+    </div>
+    <div class="mb-6">
+      <h3 class="text-md font-medium mb-2">Distribuição das Classes de Voos</h3>
+      <div>{{ graph_html.class_airplace | safe }}</div>
+    </div>
+    <div class="mb-6">
+      <h3 class="text-md font-medium mb-2">Distribuição das Classes de Voos</h3>
+      <div>{{ graph_html.class2_price | safe }}</div>
+    </div>
+    
   </div>
 {% endif %}
+
 {% endblock %}
